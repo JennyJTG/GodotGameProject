@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1258.96, -25.5932, 0, 0, 0, 0, 1925.41, -9.05661, 0, 0, 0, 0, 1922.23, 1069.81, 0, 0, 0, 0, 0, 1080, 0, 0, 0, 0, 0, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, -27, -16, 0, 0, 0, 0, 1893, -16, 0, 0, 0, 0, 1893, 1064, 0, 0, 0, 0, -27, 1064, 0, 0, 0, 0, -27, -16 )
 }
 
 [node name="Main" type="Node"]
@@ -28,10 +28,13 @@ one_shot = true
 position = Vector2( 940, 588 )
 
 [node name="MobPath" type="Path2D" parent="."]
-position = Vector2( 106, 125.667 )
-scale = Vector2( 0.892797, 0.846604 )
+position = Vector2( 27, 16 )
 curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2( -27, -16 )
 
 [connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

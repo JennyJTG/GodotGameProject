@@ -11,6 +11,7 @@ func start(pos):
     $CollisionShape2D.disabled = false
 
 func _ready():
+    hide()
     screen_size = get_viewport_rect().size
 
 func _process(delta):
