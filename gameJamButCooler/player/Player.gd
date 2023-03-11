@@ -15,6 +15,8 @@ func _physics_process(delta):
     var move = ACCELERATION * (Input.get_axis("move_left", "move_right"))
     if velocity.y > 0 and !is_on_floor():
         $AnimatedSprite.animation = "falling"
+    elif velocity.y < 0:
+        $AnimatedSprite.animation = "jump"
     else:
         $AnimatedSprite.animation = "walk"
     if velocity.length() > 0:
