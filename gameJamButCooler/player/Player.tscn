@@ -137,3 +137,11 @@ shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="HPLabel" type="Label" parent="."]
+margin_left = -38.0
+margin_top = -45.0
+margin_right = 39.0
+margin_bottom = -31.0
+text = "150"
+align = 1
