@@ -1,24 +1,20 @@
-extends KinematicBody2D
+extends "res://Entity.gd"
 
 
 
 ##Among us
 ##Haha whoever wrote play I stole all yer scripts
 var velocity = Vector2()
-var HP = 25
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 
 func _ready():
+    HP = 25
     $HPLabel.text = str(HP)
     pass
 
-func dep_health(amt):
-    HP = HP - amt
-    $HPLabel.text = str(HP)
-    
-    
+
 
 func _physics_process(delta):
     velocity.y += gravity * delta
