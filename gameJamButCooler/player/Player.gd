@@ -41,12 +41,6 @@ func _physics_process(delta):
     if abs(move) < ACCELERATION * 0.1:
         velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
     else:
-        $AnimatedSprite.animation = "walk"
-    if abs(move) < ACCELERATION * 0.1:
-        velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
-        $AnimatedSprite.set_frame(0) 
-        $AnimatedSprite.stop()
-    else:
         $AnimatedSprite.flip_h = velocity.x < 0
         var acceleration = move * delta
         if velocity.x * move < 0:
